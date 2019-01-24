@@ -28,3 +28,18 @@ sudo apt-get install postgresql
   psql postgres
   CREATE DATABASE robinsjohnson
   \q
+#  install ssh and generate a key
+sudo apt-get install ssh
+ssh-keygen -t rsa -b 4096 -C "robin.s.johnson@gmail.com"
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_rsa
+sudo apt-get install xclip
+xclip -sel clip < ~/.ssh/id_rsa.pub
+#  git setup
+git config --global user.email "robin.s.johnson@gmail.com"
+git config --global user.name "rbbri"
+#  Flutter setup
+sudo apt-get install lib32stdc++6
+curl -O https://storage.googleapis.com/flutter_infra/releases/stable/linux/flutter_linux_v1.0.0-stable.tar.xz
+tar xf flutter_linux_v1.0.0-stable.tar.xz
+export PATH=`pwd`/flutter/bin:$PATH
