@@ -43,3 +43,10 @@ sudo apt-get install lib32stdc++6
 curl -O https://storage.googleapis.com/flutter_infra/releases/stable/linux/flutter_linux_v1.0.0-stable.tar.xz
 tar xf flutter_linux_v1.0.0-stable.tar.xz
 export PATH=`pwd`/flutter/bin:$PATH
+#  Install adb
+sudo apt-get install adb
+# Install rvm
+command curl -sSL https://rvm.io/pkuczynski.asc | gpg --import -
+\curl -sSL https://get.rvm.io | bash -s stable
+# Install ruby
+rvm install "ruby-2.5.1"
